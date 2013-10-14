@@ -43,7 +43,7 @@ git submodule update --init
 * Edit configuration parameters in the install script and run it. see /home/httpd/setup/install.sh
 
 ```
-cd /home/httpd/QuickCommerce/setup/install.sh
+cd /home/httpd/QuickCommerce/setup/
 // edit the params and run it
 ./install.sh
 ```

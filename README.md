@@ -1,6 +1,8 @@
 # Introduction #
 
-The purpose of this project is to help you get a minimalistic but functioning woocommerce website up and running with default settings really quickly. If you follow the installation process correctly, you should have a wordpress base running woocommerce with twentythirteen responsive theme. Quickcommerce can be useful if you want to showcase the power of woocommerce, test for plugins compatibility before deploying to your woocommerce production site, debug woocommerce functionality with minimal sets of plugins. Being able to spawn off a clean slate of woocommerce installation quickly is convenient. If you intend to build a new woocommerce site, you can also use this db and settings as a base.
+The purpose of this project is to help you get a minimalistic but functioning woocommerce website up and running with default settings really quickly. If you follow the installation process correctly, you should have a wordpress base running woocommerce with twentythirteen responsive theme. Quickcommerce can be useful if you want to showcase the power of woocommerce, test for plugins compatibility before deploying to your woocommerce production site, debug woocommerce functionality with minimal sets of plugins. 
+
+Being able to spawn off a clean slate of woocommerce installation quickly is convenient. If you intend to build a new woocommerce site, you can also use this db and settings as a base.
 
 ## Pre-requisite ##
 * [Wordpress requirements](http://wordpress.org/about/requirements/)
@@ -38,11 +40,10 @@ git submodule update --init
 </VirtualHost>
 ```
 
-* Edit configuration parameters in the install script. see /home/httpd/setup/install.sh
-* Run the install script.
+* Edit configuration parameters in the install script and run it. see /home/httpd/setup/install.sh
 
 ```
-cd path_to_your_wordpress_install/setup/install.sh
+cd /home/httpd/QuickCommerce/setup/install.sh
 // edit the params and run it
 ./install.sh
 ```

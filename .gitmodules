@@ -1,0 +1,6 @@
+[submodule "wp-content/plugins/woocommerce"]
+	path = wp-content/plugins/woocommerce
+	url = git@github.com:bernardpeh/woocommerce.git
+[submodule "bdd/php-driver"]
+	path = bdd/php-driver
+	url = git@github.com:bernardpeh/php-webdriver.git

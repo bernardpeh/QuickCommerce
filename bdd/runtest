@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# start the java server, ie ../runserver first
+
+if [ $# -eq 0 ]
+then
+  echo "
+    This simple script allows you to run phpunit test on multiple folders.
+        
+    Usage: ./`basename $0` landing_page cart
+    
+    Version: 1.0
+    Author: Bernard Peh 18 Nov 2012
+    "
+  exit;
+fi
+
+# clear the txt
+if [ -f result.txt ]
+then
+  rm result.txt
+fi
+
+# now run selenium java server and wait for 5 secs for the server to load
+xterm -e "java -jar selenium-server-standalone-2.31.0.jar" &
+xid=$!
+sleep 5;
+
+# now run the test
+for j in $@
+do
+  cd $j;
+  for i in *_*/*.php
+    do
+      echo "$j/$i :" >> ../result.txt
+      phpunit --testdox $i >> ../result.txt 
+      echo "-------------------------------------" >> ../result.txt
+  done;
+  cd ..;
+done;
+
+# now format the result nicely
+sed -i 's/PHPUnit 3.6.12 by Sebastian Bergmann.//g' result.txt
+sed -i 's/^Elements$//g' result.txt
+sed -i '/^$/d' result.txt
+sed -i 's/\] test /\] /g' result.txt
+# now alert if there were errors
+ERR=`cat result.txt | grep -c "\[ \]"`
+echo "You had $ERR errors in your tests." >> result.txt
+
+# now kill the xterm
+kill $xid
+
+exit 0;

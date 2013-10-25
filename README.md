@@ -61,6 +61,10 @@ user: test@localhost.localdomain
 
 pass: 12345
 
+## Test Coupon ##
+
+use coupon code 'test' upon checkout to give 100% cart discount.
+
 ## Browser Testing (Optional) ##
 
 I wrote some test cases to test the basic functionality of woocommerce. To run the test, install [phpunit](http://phpunit.de/manual/3.0/en/installation.html) and firefox. Then go to path_to_your_wordpress_install/bdd and run

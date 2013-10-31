@@ -9,3 +9,6 @@ Version:        1.0.0
 */
 @import url("../twentythirteen/style.css");
 
+.entry-header, .entry-content, .entry-summary, .entry-meta {
+	max-width: 980px;
+}
